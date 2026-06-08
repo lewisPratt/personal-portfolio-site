@@ -7,6 +7,9 @@
 
 body {
     background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    flex:1;
 
 }
 
@@ -35,8 +38,15 @@ h2 {
     text-transform: uppercase;
     font-family: 'Quantico', monospace;
 }
+
 p {
-    font-family:'Instrument Serif', monospace;
+    font-family: 'Instrument Serif', monospace;
+}
+footer{
+    height:55px;
+    width:100%;
+    background-color: rgb(196,196,196);
+    display:flex;
 }
 /* index page-->*/
 
@@ -45,7 +55,29 @@ p {
     height: 200px;
     border-radius: 50%;
     border: 8px solid white;
+    overflow: clip;
+    position: relative;
 
+}
+
+#thumbnail-portrait img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+
+}
+
+#second-portrait {
+    position: absolute;
+    top: -120%;
+    transition: .7s;
+}
+
+#thumbnail-portrait:hover #second-portrait {
+    top: 0;
 }
 
 #header-contents {

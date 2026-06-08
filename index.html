@@ -20,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
+    <script src="assets/javascript/home.js" defer></script>
 
 </head>
 
@@ -38,8 +38,11 @@
     </nav>
     <header>
         <div id="header-contents">
-            <img id="thumbnail-portrait" class="mb-5" src="assets/images/thumbnail.webp"
-                alt="Black and White Portrait of Lewis Pratt">
+            <div id="thumbnail-portrait" class="mb-5">
+                <img src="assets/images/thumbnail.webp" alt="Black and White Portrait of Lewis Pratt">
+                <img id="second-portrait" src="assets/images/secondary-thumbnail.webp" alt="Black and White Portrait of Lewis Pratt">
+
+            </div>
             <h1 class="">Lewis Pratt</h1>
             <p class="lead text-center w-75" id="headline"> Junior Web Developer.<br>Web Application Development
                 Student.</p>
@@ -93,7 +96,8 @@
                                 weekly meal plans
                                 as well as tracking ingredients. Runs locally in Docker.
                             </p>
-                            <p class="card-text"><small class="text-body-secondary">| HTML | CSS | Javascript | Bootstrap
+                            <p class="card-text"><small class="text-body-secondary">| HTML | CSS | Javascript |
+                                    Bootstrap
                                     | SQL |
                                     OpenAi API</small></p>
                             <span class="badge text-bg-warning">Ongoing</span>
@@ -107,18 +111,22 @@
             <div class="card mb-3 m-auto remove-radius" style="max-width: 90%;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/project-images/etsy-order-parser.webp" class="img-fluid rounded-start" alt="...">
+                        <img src="assets/images/project-images/etsy-order-parser.webp" class="img-fluid rounded-start"
+                            alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body ">
                             <h5 class="card-title">Etsy Auto Order Parser</h5>
-                            <p class="card-text">Developed in Python, this app parses Etsy order PDF files, searches for user
-                                defined product codes, then finds the corresponding file on the host computer. The app then sends the 
-                                identified files to the printer. This automation app streamlines the process of printing greetings cards on demand, saving 
-                                significant time and reducing user error in the printing process. 
+                            <p class="card-text">Developed in Python, this app parses Etsy order PDF files, searches for
+                                user
+                                defined product codes, then finds the corresponding file on the host computer. The app
+                                then sends the
+                                identified files to the printer. This automation app streamlines the process of printing
+                                greetings cards on demand, saving
+                                significant time and reducing user error in the printing process.
                             </p>
                             <p class="card-text"><small class="text-body-secondary">| Python |</small></p>
-                             <span class="badge text-bg-warning">Ongoing</span>
+                            <span class="badge text-bg-warning">Ongoing</span>
                             <span class="badge text-bg-success">Personal Project</span>
 
                         </div>
@@ -130,5 +138,7 @@
         </div>
     </main>
 </body>
-
+<footer>
+    
+</footer>
 </html>

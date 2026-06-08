@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #090909;
+
+}
+
+body {
+    background-color: #F9F9F9;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Quantico', monospace;
+    text-transform: uppercase;
+
+}
+
+h1 {
+    font-size: 2.7rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Quantico', monospace;
+
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-family: 'Quantico', monospace;
+}
+p {
+    font-family:'Instrument Serif', monospace;
+}
+/* index page-->*/
+
+#thumbnail-portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid white;
+
+}
+
+#header-contents {
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80svh;
+}
+
+#headline {
+    font-size: 1rem;
+    font-family: 'Instrument Serif', monospace;
+}
+
+#technologies {
+    color: #c4c4c4;
+    font-size: .9rem;
+}
+
+.remove-radius,
+.remove-radius * {
+    border-radius: 0 !important;
+}
+
+#projects {}
+
+#projects h2 {
+    color: #c4c4c4;
+    background: #ffffff;
+    height: 10svh;
+    padding-top: 15px;
+    border-radius: 25px 25px 0 0;
+}
+
+#projects .card {
+    animation-name: fadeIn;
+    animation-timeline: view();
+    animation-fill-mode: forwards;
+    animation-range: entry 0% entry 100%;
+}
+
+@keyframes slideXLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+
+
+    }
+}

@@ -9,10 +9,14 @@ body {
     background-color: #F9F9F9;
     display: flex;
     flex-direction: column;
-    flex:1;
+    flex: 1;
 
 }
-
+ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
 h1,
 h2,
 h3,
@@ -42,12 +46,14 @@ h2 {
 p {
     font-family: 'Instrument Serif', monospace;
 }
-footer{
-    height:55px;
-    width:100%;
-    background-color: rgb(196,196,196);
-    display:flex;
+
+footer {
+    height: 55px;
+    width: 100%;
+    background-color: rgb(196, 196, 196);
+    display: flex;
 }
+
 /* index page-->*/
 
 #thumbnail-portrait {
@@ -80,13 +86,16 @@ footer{
     top: 0;
 }
 
+header {
+    height: 100svh;
+}
+
 #header-contents {
     display: flex;
-    padding-top: 100px;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 80svh;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 #headline {
@@ -104,20 +113,49 @@ footer{
     border-radius: 0 !important;
 }
 
-#projects {}
+#skill-wrapper {
+    position: relative;
+    overflow:hidden;
+    width:80%;
+    max-width:768px;
+    user-select: none;
+
+}
+
+#skill-inner {
+    display: flex;
+    width:max-content;
+    align-items: center;
+    animation: ticker 20s linear infinite;
+}
+#skill-inner:hover{
+animation-play-state: paused;
+}
+
+
+#skill-inner .skill {
+    padding: 10px;
+    background-color: white;
+    margin-right:20px;
+}
+
+#skill-wrapper .skill:hover{
+    background-color:#bfffe1;
+}
+#projects {
+    padding-top: 10%;
+}
 
 #projects h2 {
     color: #c4c4c4;
-    background: #ffffff;
+    font-size: 3rem;
     height: 10svh;
-    padding-top: 15px;
-    border-radius: 25px 25px 0 0;
 }
 
 #projects .card {
     animation-name: fadeIn;
     animation-timeline: view();
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
     animation-range: entry 0% entry 100%;
 }
 
@@ -146,5 +184,27 @@ footer{
         transform: translateY(0);
 
 
+    }
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width:768px) {
+    #projects h2 {
+        font-size: 4rem;
+    }
+    #skill-wrapper{
+        margin-top:6rem;
+    }
+    #header-contents{
+        padding-top:70px;
     }
 }

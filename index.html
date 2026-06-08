@@ -25,37 +25,66 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">L Pratt</a>
-
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">L Pratt</a>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <div id="header-contents">
-            <div id="thumbnail-portrait" class="mb-5">
+            <div id="thumbnail-portrait" class="mt-5 mb-2">
                 <img src="assets/images/thumbnail.webp" alt="Black and White Portrait of Lewis Pratt">
-                <img id="second-portrait" src="assets/images/secondary-thumbnail.webp" alt="Black and White Portrait of Lewis Pratt">
+                <img id="second-portrait" src="assets/images/secondary-thumbnail.webp"
+                    alt="Black and White Portrait of Lewis Pratt">
 
             </div>
-            <h1 class="">Lewis Pratt</h1>
-            <p class="lead text-center w-75" id="headline"> Junior Web Developer.<br>Web Application Development
+            <h1 class="mt-5 mb-5">Lewis Pratt</h1>
+            <p class="lead text-center w-75 mb-5" id="headline"> Junior Web Developer.<br>Web Application Development
                 Student.</p>
-            <p id="technologies" class="text-center w-75">HTML5 | CSS | Javascript | Python | Bootstrap</p>
 
-            <div id="github-button-parent" style="display:flex; padding:10px;"><a
+            <div id="github-button-parent" class="mb-5 mb-md-2 mt-5" style="display:flex; padding:10px;"><a
                     class="btn btn-outline-primary remove-radius" href="https://github.com/lewispratt" role="button"
                     target="_blank">github.com/lewispratt</a></div>
+
+            <div id="skill-wrapper">
+                <ul id="skill-inner">
+                    <li class="skill">Bootstrap</li>
+                    <li class="skill">Javascript</li>
+                    <li class="skill">HTML5</li>
+                    <li class="skill">CSS3</li>
+                    <li class="skill">React</li>
+                    <li class="skill">Affinity Designer</li>
+                    <li class="skill">Visual Studio Code</li>
+                    <li class="skill">Python</li>
+                    <li class="skill">PHP</li>
+                    <li class="skill">C#</li>
+                    <!--duplicates-->
+                    <li class="skill">Bootstrap</li>
+                    <li class="skill">Javascript</li>
+                    <li class="skill">HTML5</li>
+                    <li class="skill">CSS3</li>
+                    <li class="skill">React</li>
+                    <li class="skill">Affinity Designer</li>
+                    <li class="skill">Visual Studio Code</li>
+                    <li class="skill">Python</li>
+                    <li class="skill">PHP</li>
+                    <li class="skill">C#</li>
+
+                </ul>
+            </div>
         </div>
+
     </header>
     <main>
-        <div id="projects" class="mt-5">
-            <!-- <h2 class="w-50 m-auto text-center">Projects</h2> -->
+        <section id="projects" class="mt-5">
+            <!-- <h2 class=" m-auto pe-2 pe-md-5 text-end">Projects</h2> -->
             <div class="card mb-3 m-auto remove-radius" style="max-width: 90%;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -135,10 +164,14 @@
             </div>
 
 
-        </div>
+        </section>
+        <section id="contact">
+
+        </section>
     </main>
 </body>
 <footer>
-    
+
 </footer>
+
 </html>

@@ -26,6 +26,11 @@
 
 <body>
     <header>
+        <div id="score" class="text-center"><span>Score:</span>
+            <div id="score-sum"><span id="current-score">0</span>/300</div>
+            <div id="point-bubble"><span></span></div>
+        </div>
+
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">L Pratt</a>
@@ -40,14 +45,14 @@
 
         <div id="header-contents">
             <div id="thumbnail-portrait" class="mt-5 mb-2">
-                <img src="assets/images/thumbnail.webp" alt="Black and White Portrait of Lewis Pratt">
-                <img id="second-portrait" src="assets/images/secondary-thumbnail.webp"
+                <img id="main-portrait" src="assets/images/thumbnail.webp" alt="Black and White Portrait of Lewis Pratt">
+                <img id="second-portrait" src="assets/images/colourThumbnail.webp"
                     alt="Black and White Portrait of Lewis Pratt">
 
             </div>
             <h1 class="mt-5 mb-5">Lewis Pratt</h1>
             <p class="lead text-center w-75 mb-5" id="headline"> Junior Web Developer.<br>Web Application Development
-                Student.</p>
+                Student.<br> Lifetime gamer and serial hobbyist.</p>
 
             <div id="github-button-parent" class="mb-5 mb-md-2 mt-5" style="display:flex; padding:10px;"><a
                     class="btn btn-outline-primary remove-radius" href="https://github.com/lewispratt" role="button"
@@ -55,27 +60,27 @@
 
             <div id="skill-wrapper">
                 <ul id="skill-inner">
-                    <li class="skill">Bootstrap</li>
-                    <li class="skill">Javascript</li>
-                    <li class="skill">HTML5</li>
-                    <li class="skill">CSS3</li>
-                    <li class="skill">React</li>
-                    <li class="skill">Affinity Designer</li>
-                    <li class="skill">Visual Studio Code</li>
-                    <li class="skill">Python</li>
-                    <li class="skill">PHP</li>
-                    <li class="skill">C#</li>
+                    <li class="skill" data-skill-name="bootstrap-skill">Bootstrap</li>
+                    <li class="skill" data-skill-name="js-skill">Javascript</li>
+                    <li class="skill" data-skill-name="html-skill">HTML5</li>
+                    <li class="skill" data-skill-name="css-skill">CSS3</li>
+                    <li class="skill" data-skill-name="react-skill">React</li>
+                    <li class="skill" data-skill-name="affinity-skill">Affinity Designer</li>
+                    <li class="skill" data-skill-name="vs-skill">Visual Studio Code</li>
+                    <li class="skill" data-skill-name="python-skill">Python</li>
+                    <li class="skill" data-skill-name="php-skill">PHP</li>
+                    <li class="skill" data-skill-name="c-skill">C#</li>
                     <!--duplicates-->
-                    <li class="skill">Bootstrap</li>
-                    <li class="skill">Javascript</li>
-                    <li class="skill">HTML5</li>
-                    <li class="skill">CSS3</li>
-                    <li class="skill">React</li>
-                    <li class="skill">Affinity Designer</li>
-                    <li class="skill">Visual Studio Code</li>
-                    <li class="skill">Python</li>
-                    <li class="skill">PHP</li>
-                    <li class="skill">C#</li>
+                    <li class="skill" data-skill-name="bootstrap-skill">Bootstrap</li>
+                    <li class="skill" data-skill-name="js-skill">Javascript</li>
+                    <li class="skill" data-skill-name="html-skill">HTML5</li>
+                    <li class="skill" data-skill-name="css-skill">CSS3</li>
+                    <li class="skill" data-skill-name="react-skill">React</li>
+                    <li class="skill" data-skill-name="affinity-skill">Affinity Designer</li>
+                    <li class="skill" data-skill-name="vs-skill">Visual Studio Code</li>
+                    <li class="skill" data-skill-name="python-skill">Python</li>
+                    <li class="skill" data-skill-name="php-skill">PHP</li>
+                    <li class="skill" data-skill-name="c-skill">C#</li>
 
                 </ul>
             </div>

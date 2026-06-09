@@ -12,11 +12,17 @@ body {
     flex: 1;
 
 }
-ul{
+
+ul {
     list-style: none;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
+
+li {
+    list-style: none;
+}
+
 h1,
 h2,
 h3,
@@ -82,7 +88,7 @@ footer {
     transition: .7s;
 }
 
-#thumbnail-portrait:hover #second-portrait {
+#second-portrait.revealed {
     top: 0;
 }
 
@@ -115,33 +121,35 @@ header {
 
 #skill-wrapper {
     position: relative;
-    overflow:hidden;
-    width:80%;
-    max-width:768px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 768px;
     user-select: none;
 
 }
 
 #skill-inner {
     display: flex;
-    width:max-content;
+    width: max-content;
     align-items: center;
     animation: ticker 20s linear infinite;
 }
-#skill-inner:hover{
-animation-play-state: paused;
+
+#skill-inner:hover {
+    /* animation-play-state: paused; */
 }
 
 
-#skill-inner .skill {
+.skill {
     padding: 10px;
     background-color: white;
-    margin-right:20px;
+    margin-right: 20px;
 }
 
-#skill-wrapper .skill:hover{
-    background-color:#bfffe1;
+.skill:hover {
+    background-color: #bfffe1;
 }
+
 #projects {
     padding-top: 10%;
 }
@@ -157,6 +165,52 @@ animation-play-state: paused;
     animation-timeline: view();
     animation-fill-mode: both;
     animation-range: entry 0% entry 100%;
+}
+
+.shoot-off {
+    --rotAngle: 45deg;
+    --shotHeight: 20px;
+
+    animation: shootOff .6s ease-in-out;
+    animation-fill-mode: forwards;
+    position: absolute;
+}
+
+#score {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 10px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+}
+
+#score>span {
+    font-size: .8rem;
+}
+
+#point-bubble {
+    position: absolute;
+    padding: 3px;
+    background-color: black;
+    border-radius: 10px;
+    color:#F9F9F9;
+    display:none;
+}
+
+#point-bubble>span {
+    color: #F9F9F9
+}
+
+.new-points {
+    display:block !important;
+    animation-name: pointsSlideUp;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+        transform: translateX(50%);
+
 }
 
 @keyframes slideXLeft {
@@ -197,14 +251,46 @@ animation-play-state: paused;
     }
 }
 
+@keyframes shootOff {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        top: var(--shotHeight);
+        transform: rotate(var(--rotAngle))
+    }
+
+    100% {
+        top: 100%;
+       
+        transform: rotate(var(--rotAngle))
+    }
+}
+
+@keyframes pointsSlideUp {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50px);
+        opacity:0;
+    }
+}
+
+
+/* Media queries */
 @media (min-width:768px) {
     #projects h2 {
         font-size: 4rem;
     }
-    #skill-wrapper{
-        margin-top:6rem;
+
+    #skill-wrapper {
+        margin-top: 6rem;
     }
-    #header-contents{
-        padding-top:70px;
+
+    #header-contents {
+        padding-top: 70px;
     }
 }

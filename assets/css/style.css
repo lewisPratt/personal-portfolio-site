@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     color: #090909;
-
+    box-sizing: border-box;
 }
 
 body {
@@ -179,32 +179,67 @@ header {
     animation-timeline: view();
     animation-fill-mode: both;
     animation-range: entry 0% entry 100%;
-    /* transform: skewY(8deg); */
     transition: 1s;
     width: 100%;
-
+    height:500px;
+    z-index:2;
+    background-color:white;
+}
+.card-content-row{
+    height:100%;
+    background-color:#F9F9F9;
+}
+/* #projects .card::after{
+    position:absolute;
+    content: '';
+    width:100%;
+    height:100%;
+    background-color:#ffc107;
+    filter:blur(10px) opacity(0.25);
+    z-index:-1;
+} */
+.project-tab {
+    position: absolute;
+    translate: 0 -100%;
+    background-color: #bfffe1;
+    width: fit-content;
+    left: 0;
+    padding: 0 20px;
 }
 
-.margin-cards {
-    margin-bottom: -500px;
+#athena-card-head {
+    background-image: url('../images/project-images/athena.webp');
+}
+#plate-planner-card-head {
+    background-image: url('../images/project-images/plateplanner.webp');
+}
+#etsy-card-head {
+    background-image: url('../images/project-images/etsy-order-parser.webp');
 }
 
-.margin-cards:hover {
-    margin-bottom: -70px;
+.card-head {
+    height: 200px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(2) blur(4px);
+    transition:1s;
+    cursor: pointer;
+    
+}
+.unblur-head{
+    filter: brightness(1) blur(0);
+}
+.margin-cards, #first-project {
+    margin-bottom: -400px;
 }
 
-#first-project {
-    margin-top: 0;
 
+.remove-bottom-margin{
+    margin-bottom:0 !important;
 }
-
-#project-two {
-    margin-top: 20%;
-
-}
-
-#last-project {
-    margin-top: 20%;
+.card{
+    margin-top:30px;
 }
 
 .shoot-off {
@@ -354,17 +389,19 @@ header {
     #header-contents {
         padding-top: 70px;
     }
-     #projects {
+
+    #projects {
         width: 750px;
     }
+    #projects .card {
+        height:400px;
+    }
 
-    .margin-cards {
+    .margin-cards , #first-project{
         margin-bottom: -350px;
     }
 
-    .margin-cards:hover {
-        margin-bottom: -150px;
-    }
+   
 }
 
 
@@ -373,13 +410,11 @@ header {
         width: 800px;
     }
 
-    .margin-cards {
+    .margin-cards , #first-project{
         margin-bottom: -370px;
     }
 
-    .margin-cards:hover {
-        margin-bottom: -150px;
-    }
+
 }
 
 @media (min-width:1440px) {
@@ -387,11 +422,9 @@ header {
         width: 1000px;
     }
 
-    .margin-cards {
-        margin-bottom: -470px;
+    .margin-cards, #first-project{
+        margin-bottom: -350px;
     }
 
-    .margin-cards:hover {
-        margin-bottom: -200px;
-    }
+    
 }

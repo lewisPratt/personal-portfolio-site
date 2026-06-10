@@ -10,6 +10,25 @@ const thumbnail = document.querySelector("#thumbnail-portrait");
 const noMoreSkills = document.querySelector("#no-more-skills");
 thumbnail.addEventListener("click", countClicks);
 
+const projectCards = document.querySelectorAll(".card-head");
+projectCards.forEach(cardHead => {
+    cardHead.addEventListener("click", () => {
+        cardHead.classList.toggle("unblur-head")
+        cardHead.closest(".card").classList.toggle("remove-bottom-margin");
+        
+
+    })
+});
+
+document.body.addEventListener("click", (e) => {
+    projectCards.forEach(cardHead => {
+        if (!cardHead.closest(".card").contains(e.target)) {
+            cardHead.classList.remove("unblur-head")
+            cardHead.closest(".card").classList.remove("remove-bottom-margin");
+        }
+    });
+});
+
 let shot = 0;
 let clicks = 0;
 let pictureClicks = false;
@@ -35,9 +54,9 @@ skills.forEach(skill => {
         let containerTop = container.getBoundingClientRect().y;
         const height = random(10, (containerTop - 100));
         let leftPos = skill.getBoundingClientRect().x + "px";
-        let topPos = skill.getBoundingClientRect().y + "px";
+        let topPos = skill.getBoundingClientRect().y + window.scrollY + "px";
 
-        
+
         //set position and styling of cloned skill
         clone.style.left = leftPos;
         clone.style.top = topPos;
@@ -61,7 +80,7 @@ function checkEmpty() {
 
     if ((shot * 2) == totalSkills) {
         const rect = skillContainer.getBoundingClientRect();
-        
+
         let xPosition = rect.left + rect.width / 2;
         let yPosition = skillContainer.getBoundingClientRect().y;
         spawnBubble(xPosition, yPosition, 50);
@@ -80,7 +99,7 @@ function spawnBubble(xPos, yPos, points) {
     let pointClone = pointBubble.cloneNode(true);
     console.log(xPos, yPos);
     pointClone.style.left = xPos + "px";
-    pointClone.style.top = yPos + "px";
+    pointClone.style.top = yPos + window.scrollY + "px";
     pointClone.innerText = "+" + points;
 
     pointClone.classList.add("new-points");
@@ -94,9 +113,10 @@ function countClicks() {
         const rect = thumbnail.getBoundingClientRect();
         let xPosition = rect.left + rect.width / 2;
         let yPosition = thumbnail.getBoundingClientRect().y;
-        spawnBubble(xPosition,yPosition,50);
+        spawnBubble(xPosition, yPosition, 50);
         pictureClicks = true;
         thumbnail.classList.remove("target");
         document.querySelector("#second-portrait").classList.add("revealed");
     }
 }
+

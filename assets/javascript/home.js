@@ -5,7 +5,9 @@ const skillContainer = document.querySelector("#skill-wrapper")
 const totalSkills = skillsParent.childElementCount;
 const currentScore = document.querySelector("#current-score");
 const pointBubble = document.querySelector("#point-bubble");
-const mainPortrait = document.querySelector("#main-portrait");
+const cardTarget = document.querySelector("#card-target");
+cardTarget.addEventListener("click", cardTargetPoints);
+
 const thumbnail = document.querySelector("#thumbnail-portrait");
 const noMoreSkills = document.querySelector("#no-more-skills");
 thumbnail.addEventListener("click", countClicks);
@@ -15,7 +17,7 @@ projectCards.forEach(cardHead => {
     cardHead.addEventListener("click", () => {
         cardHead.classList.toggle("unblur-head")
         cardHead.closest(".card").classList.toggle("remove-bottom-margin");
-        
+
 
     })
 });
@@ -89,24 +91,6 @@ function checkEmpty() {
     }
 }
 
-function updateScore(points) {
-    score += points;
-    currentScore.innerText = score;
-}
-//spawns a point bubble at the coordinates passed and points value
-//adds points to overall score
-function spawnBubble(xPos, yPos, points) {
-    let pointClone = pointBubble.cloneNode(true);
-    console.log(xPos, yPos);
-    pointClone.style.left = xPos + "px";
-    pointClone.style.top = yPos + window.scrollY + "px";
-    pointClone.innerText = "+" + points;
-
-    pointClone.classList.add("new-points");
-    pointClone.addEventListener("animationend", () => pointClone.remove());
-    document.body.appendChild(pointClone);
-    updateScore(points);
-}
 function countClicks() {
     clicks += 1;
     if (clicks >= 20 && !pictureClicks) {
@@ -120,3 +104,40 @@ function countClicks() {
     }
 }
 
+function cardTargetPoints() {
+    if(cardTarget.classList.contains("target")){
+    const rect = cardTarget.getBoundingClientRect();
+    let xPosition = rect.left + rect.width / 2;
+    let yPosition = cardTarget.getBoundingClientRect().y;
+    spawnBubble(xPosition, yPosition, 10);
+     cardTarget.classList.add("folded");
+     cardTarget.classList.remove("target");
+    }
+    else{
+        console.log("naughty! Don't spoil the fun..");
+    }
+}
+
+
+//spawns a point bubble at the coordinates passed and points value
+//adds points to overall score
+function spawnBubble(xPos, yPos, points) {
+    let pointClone = pointBubble.cloneNode(true);
+    pointClone.style.left = xPos + "px";
+    pointClone.style.top = yPos + window.scrollY + "px";
+    pointClone.innerText = "+" + points;
+
+    pointClone.classList.add("new-points");
+    pointClone.addEventListener("animationend", () => pointClone.remove());
+    document.body.appendChild(pointClone);
+    updateScore(points);
+}
+
+function updateScore(points) {
+    if((score + points) >= 300){
+        score = 300;
+    } else{
+    score += points;
+    currentScore.innerText = score;
+    }
+}

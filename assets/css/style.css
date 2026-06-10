@@ -60,6 +60,11 @@ footer {
     margin: auto;
 }
 
+nav {
+    z-index: 100;
+    width: 100%;
+}
+
 footer {
     height: 55px;
     width: 100%;
@@ -102,15 +107,16 @@ footer {
 
 header {
     height: 100svh;
-}
-
-#header-contents {
+    z-index: 7;
+    align-content: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 56px;
 }
+
+
 
 #headline {
     font-size: 1rem;
@@ -133,6 +139,7 @@ header {
     width: 80%;
     max-width: 768px;
     user-select: none;
+    margin: 0 auto;
 
 }
 
@@ -166,6 +173,7 @@ header {
     margin: auto;
     height: fit-content;
     margin-top: 100px;
+    position: relative;
 }
 
 #projects h2 {
@@ -181,23 +189,17 @@ header {
     animation-range: entry 0% entry 100%;
     transition: 1s;
     width: 100%;
-    height:500px;
-    z-index:2;
-    background-color:white;
+    height: 500px;
+    z-index: 2;
+    background-color: white;
+    box-shadow: -11px 10px 10px #00000030;
 }
-.card-content-row{
-    height:100%;
-    background-color:#F9F9F9;
+
+.card-content-row {
+    height: 100%;
+    background-color: #F9F9F9;
 }
-/* #projects .card::after{
-    position:absolute;
-    content: '';
-    width:100%;
-    height:100%;
-    background-color:#ffc107;
-    filter:blur(10px) opacity(0.25);
-    z-index:-1;
-} */
+
 .project-tab {
     position: absolute;
     translate: 0 -100%;
@@ -210,9 +212,11 @@ header {
 #athena-card-head {
     background-image: url('../images/project-images/athena.webp');
 }
+
 #plate-planner-card-head {
     background-image: url('../images/project-images/plateplanner.webp');
 }
+
 #etsy-card-head {
     background-image: url('../images/project-images/etsy-order-parser.webp');
 }
@@ -223,23 +227,53 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     filter: brightness(2) blur(4px);
-    transition:1s;
+    transition: 1s;
     cursor: pointer;
-    
+
 }
-.unblur-head{
+
+#card-target {
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    translate: 0 100%;
+    background-color: #F9F9F9;
+    color: red;
+    padding: 3px;
+    transform-origin: top center;
+    /* hinge point */
+    transform: rotateX(0deg);
+    transition: transform 1s ease;
+    box-shadow: -1px -1px 4px rgb(175, 175, 175) inset;
+}
+
+#card-target * {
+    color: red;
+}
+
+#card-target.folded {
+    transform: rotateX(-90deg);
+    z-index:-1;
+    /* folds up */
+
+}
+
+.unblur-head {
     filter: brightness(1) blur(0);
 }
-.margin-cards, #first-project {
+
+.margin-cards,
+#first-project {
     margin-bottom: -400px;
 }
 
 
-.remove-bottom-margin{
-    margin-bottom:0 !important;
+.remove-bottom-margin {
+    margin-bottom: 0 !important;
 }
-.card{
-    margin-top:30px;
+
+.card {
+    margin-top: 30px;
 }
 
 .shoot-off {
@@ -256,7 +290,7 @@ header {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100;
+    z-index: 1031;
     padding: 10px;
     background-color: white;
     border-radius: 0 0 20px 20px;
@@ -273,6 +307,7 @@ header {
     border-radius: 10px;
     color: #F9F9F9;
     display: none;
+    z-index: 1050;
 }
 
 #point-bubble>span {
@@ -391,17 +426,19 @@ header {
     }
 
     #projects {
-        width: 750px;
-    }
-    #projects .card {
-        height:400px;
+        width: 700px;
     }
 
-    .margin-cards , #first-project{
+    #projects .card {
+        height: 400px;
+    }
+
+    .margin-cards,
+    #first-project {
         margin-bottom: -350px;
     }
 
-   
+
 }
 
 
@@ -410,11 +447,41 @@ header {
         width: 800px;
     }
 
-    .margin-cards , #first-project{
+    .margin-cards,
+    #first-project {
         margin-bottom: -370px;
     }
 
+    #project-two {
+        left: 20px;
 
+    }
+
+    #last-project {
+        left: 40px;
+        perspective: 800px;
+
+    }
+
+    .card {
+        transform: skewY(-3deg);
+    }
+
+    #projects::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #90c5f3;
+        animation-name: fadeIn;
+        animation-timeline: view();
+        animation-fill-mode: both;
+        animation-range: entry 70% entry 100%;
+        filter: blur(50px);
+        z-index: -1;
+    }
 }
 
 @media (min-width:1440px) {
@@ -422,9 +489,10 @@ header {
         width: 1000px;
     }
 
-    .margin-cards, #first-project{
+    .margin-cards,
+    #first-project {
         margin-bottom: -350px;
     }
 
-    
+
 }

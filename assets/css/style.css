@@ -53,6 +53,13 @@ p {
     font-family: 'Instrument Serif', monospace;
 }
 
+main,
+nav,
+footer {
+    max-width: 1440px;
+    margin: auto;
+}
+
 footer {
     height: 55px;
     width: 100%;
@@ -155,9 +162,10 @@ header {
 }
 
 #projects {
-    width: 80%;
+    width: 300px;
     margin: auto;
     height: fit-content;
+    margin-top: 100px;
 }
 
 #projects h2 {
@@ -177,14 +185,12 @@ header {
 
 }
 
-#first-project,
-#project-two {
-    margin-bottom: -400px;
+.margin-cards {
+    margin-bottom: -500px;
 }
 
-#first-project:hover,
-#project-two:hover {
-    margin-bottom: -200px;
+.margin-cards:hover {
+    margin-bottom: -70px;
 }
 
 #first-project {
@@ -193,12 +199,12 @@ header {
 }
 
 #project-two {
-    margin-top: 100px;
+    margin-top: 20%;
 
 }
 
 #last-project {
-    margin-top: 100px;
+    margin-top: 20%;
 }
 
 .shoot-off {
@@ -347,5 +353,45 @@ header {
 
     #header-contents {
         padding-top: 70px;
+    }
+     #projects {
+        width: 750px;
+    }
+
+    .margin-cards {
+        margin-bottom: -350px;
+    }
+
+    .margin-cards:hover {
+        margin-bottom: -150px;
+    }
+}
+
+
+@media (min-width:1024px) {
+    #projects {
+        width: 800px;
+    }
+
+    .margin-cards {
+        margin-bottom: -370px;
+    }
+
+    .margin-cards:hover {
+        margin-bottom: -150px;
+    }
+}
+
+@media (min-width:1440px) {
+    #projects {
+        width: 1000px;
+    }
+
+    .margin-cards {
+        margin-bottom: -470px;
+    }
+
+    .margin-cards:hover {
+        margin-bottom: -200px;
     }
 }

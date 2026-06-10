@@ -37,7 +37,7 @@ skills.forEach(skill => {
         let leftPos = skill.getBoundingClientRect().x + "px";
         let topPos = skill.getBoundingClientRect().y + "px";
 
-
+        
         //set position and styling of cloned skill
         clone.style.left = leftPos;
         clone.style.top = topPos;
@@ -61,6 +61,7 @@ function checkEmpty() {
 
     if ((shot * 2) == totalSkills) {
         const rect = skillContainer.getBoundingClientRect();
+        
         let xPosition = rect.left + rect.width / 2;
         let yPosition = skillContainer.getBoundingClientRect().y;
         spawnBubble(xPosition, yPosition, 50);

@@ -44,43 +44,45 @@
         </nav>
 
         <div id="header-contents">
-            <div id="thumbnail-portrait" class="mt-5 mb-2">
-                <img id="main-portrait" src="assets/images/thumbnail.webp" alt="Black and White Portrait of Lewis Pratt">
+            <div id="thumbnail-portrait" class="mt-5 mb-2 target">
+                <img id="main-portrait" src="assets/images/thumbnail.webp"
+                    alt="Black and White Portrait of Lewis Pratt">
                 <img id="second-portrait" src="assets/images/colourThumbnail.webp"
                     alt="Black and White Portrait of Lewis Pratt">
 
             </div>
             <h1 class="mt-5 mb-5">Lewis Pratt</h1>
             <p class="lead text-center w-75 mb-5" id="headline"> Junior Web Developer.<br>Web Application Development
-                Student.<br> Lifetime gamer and serial hobbyist.</p>
+                Student.<br> Lifetime games enthusiast and serial hobbyist.</p>
 
             <div id="github-button-parent" class="mb-5 mb-md-2 mt-5" style="display:flex; padding:10px;"><a
                     class="btn btn-outline-primary remove-radius" href="https://github.com/lewispratt" role="button"
                     target="_blank">github.com/lewispratt</a></div>
 
             <div id="skill-wrapper">
+                <p id="no-more-skills" class="text-center">Skill debuff active. Thanks for that..</p>
                 <ul id="skill-inner">
-                    <li class="skill" data-skill-name="bootstrap-skill">Bootstrap</li>
-                    <li class="skill" data-skill-name="js-skill">Javascript</li>
-                    <li class="skill" data-skill-name="html-skill">HTML5</li>
-                    <li class="skill" data-skill-name="css-skill">CSS3</li>
-                    <li class="skill" data-skill-name="react-skill">React</li>
-                    <li class="skill" data-skill-name="affinity-skill">Affinity Designer</li>
-                    <li class="skill" data-skill-name="vs-skill">Visual Studio Code</li>
-                    <li class="skill" data-skill-name="python-skill">Python</li>
-                    <li class="skill" data-skill-name="php-skill">PHP</li>
-                    <li class="skill" data-skill-name="c-skill">C#</li>
+                    <li class="skill target" data-skill-name="bootstrap-skill">Bootstrap</li>
+                    <li class="skill target" data-skill-name="js-skill">Javascript</li>
+                    <li class="skill target" data-skill-name="html-skill">HTML5</li>
+                    <li class="skill target" data-skill-name="css-skill">CSS3</li>
+                    <li class="skill target" data-skill-name="react-skill">React</li>
+                    <li class="skill target" data-skill-name="affinity-skill">Affinity Designer</li>
+                    <li class="skill target" data-skill-name="vs-skill">Visual Studio Code</li>
+                    <li class="skill target" data-skill-name="python-skill">Python</li>
+                    <li class="skill target" data-skill-name="php-skill">PHP</li>
+                    <li class="skill target" data-skill-name="c-skill">C#</li>
                     <!--duplicates-->
-                    <li class="skill" data-skill-name="bootstrap-skill">Bootstrap</li>
-                    <li class="skill" data-skill-name="js-skill">Javascript</li>
-                    <li class="skill" data-skill-name="html-skill">HTML5</li>
-                    <li class="skill" data-skill-name="css-skill">CSS3</li>
-                    <li class="skill" data-skill-name="react-skill">React</li>
-                    <li class="skill" data-skill-name="affinity-skill">Affinity Designer</li>
-                    <li class="skill" data-skill-name="vs-skill">Visual Studio Code</li>
-                    <li class="skill" data-skill-name="python-skill">Python</li>
-                    <li class="skill" data-skill-name="php-skill">PHP</li>
-                    <li class="skill" data-skill-name="c-skill">C#</li>
+                    <li class="skill target" data-skill-name="bootstrap-skill">Bootstrap</li>
+                    <li class="skill target" data-skill-name="js-skill">Javascript</li>
+                    <li class="skill target" data-skill-name="html-skill">HTML5</li>
+                    <li class="skill target" data-skill-name="css-skill">CSS3</li>
+                    <li class="skill target" data-skill-name="react-skill">React</li>
+                    <li class="skill target" data-skill-name="affinity-skill">Affinity Designer</li>
+                    <li class="skill target" data-skill-name="vs-skill">Visual Studio Code</li>
+                    <li class="skill target" data-skill-name="python-skill">Python</li>
+                    <li class="skill target" data-skill-name="php-skill">PHP</li>
+                    <li class="skill target" data-skill-name="c-skill">C#</li>
 
                 </ul>
             </div>
@@ -89,8 +91,8 @@
     </header>
     <main>
         <section id="projects" class="mt-5">
-            <!-- <h2 class=" m-auto pe-2 pe-md-5 text-end">Projects</h2> -->
-            <div class="card mb-3 m-auto remove-radius" style="max-width: 90%;">
+            <!-- <h2 id="project-head" class=" pe-2 pe-md-5 text-end">Projects</h2> -->
+            <div id="first-project" class="card remove-radius">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="assets/images/project-images/athena.webp" class="img-fluid rounded-start" alt="...">
@@ -108,14 +110,40 @@
 
                             <span class="badge text-bg-warning">Ongoing</span>
                             <span class="badge text-bg-light">Course Project</span>
-
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#athena-content"
+                                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Details
+                                </a>
+                            </p>
+                            
+                            <div id="athena-content" class="project-content collapse">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, nam perspiciatis
+                                    deserunt nisi veritatis consequuntur. Quas iusto, illum deserunt non exercitationem
+                                    atque facere minima nobis, mollitia, ut veritatis natus nesciunt. Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit. Quod praesentium quaerat beatae debitis
+                                    dolore nulla repellat amet, modi alias placeat. Numquam tenetur dolore tempora porro
+                                    eum minus impedit, error aspernatur?</p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, necessitatibus in
+                                    voluptas alias repudiandae eaque sequi maiores quod adipisci tenetur modi soluta
+                                    tempore voluptatum earum praesentium blanditiis libero! Nesciunt, temporibus! Lorem
+                                    ipsum dolor sit amet consectetur adipisicing elit. Corporis rem voluptatibus ab
+                                    maiores possimus aut facilis deleniti dicta, veniam iusto pariatur corrupti
+                                    provident perferendis odio aliquid minus quibusdam ut assumenda.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quod porro earum,
+                                    deleniti distinctio sapiente laborum iste placeat, fugiat quos dolore ut molestias
+                                    laboriosam, quibusdam tempora adipisci veritatis sed vel. Lorem ipsum, dolor sit
+                                    amet consectetur adipisicing elit. Commodi neque eius libero molestias fuga deleniti
+                                    asperiores excepturi magnam, in dolore veniam, optio nobis consectetur voluptates
+                                    quidem dignissimos! Officiis, pariatur sunt?</p>
+                            </div>
 
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="card mb-3 m-auto remove-radius" style="max-width: 90%;">
+            <div id="project-two" class="card remove-radius" >
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="assets/images/project-images/plateplanner.webp" class="img-fluid rounded-start"
@@ -142,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="card mb-3 m-auto remove-radius" style="max-width: 90%;">
+            <div id="last-project"class="card remove-radius" >
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="assets/images/project-images/etsy-order-parser.webp" class="img-fluid rounded-start"

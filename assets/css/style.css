@@ -58,6 +58,7 @@ footer {
     width: 100%;
     background-color: rgb(196, 196, 196);
     display: flex;
+    margin-top: 100px;
 }
 
 /* index page-->*/
@@ -135,11 +136,6 @@ header {
     animation: ticker 20s linear infinite;
 }
 
-#skill-inner:hover {
-    /* animation-play-state: paused; */
-}
-
-
 .skill {
     padding: 10px;
     background-color: white;
@@ -150,8 +146,18 @@ header {
     background-color: #bfffe1;
 }
 
+#no-more-skills {
+    display: none;
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
 #projects {
-    padding-top: 10%;
+    width: 80%;
+    margin: auto;
+    height: fit-content;
 }
 
 #projects h2 {
@@ -165,6 +171,34 @@ header {
     animation-timeline: view();
     animation-fill-mode: both;
     animation-range: entry 0% entry 100%;
+    /* transform: skewY(8deg); */
+    transition: 1s;
+    width: 100%;
+
+}
+
+#first-project,
+#project-two {
+    margin-bottom: -400px;
+}
+
+#first-project:hover,
+#project-two:hover {
+    margin-bottom: -200px;
+}
+
+#first-project {
+    margin-top: 0;
+
+}
+
+#project-two {
+    margin-top: 100px;
+
+}
+
+#last-project {
+    margin-top: 100px;
 }
 
 .shoot-off {
@@ -194,10 +228,10 @@ header {
 #point-bubble {
     position: absolute;
     padding: 3px;
-    background-color: black;
+    background-color: rgb(136, 136, 136);
     border-radius: 10px;
-    color:#F9F9F9;
-    display:none;
+    color: #F9F9F9;
+    display: none;
 }
 
 #point-bubble>span {
@@ -205,12 +239,20 @@ header {
 }
 
 .new-points {
-    display:block !important;
+    display: block !important;
     animation-name: pointsSlideUp;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-        transform: translateX(50%);
+    transform: translateX(50%);
 
+}
+
+.target {
+    cursor: url("../images/reticle.png") 16.5 16.5, auto;
+}
+
+.target:active {
+    cursor: url("../images/reticleHit.png") 16.5 16.5, auto;
 }
 
 @keyframes slideXLeft {
@@ -229,13 +271,13 @@ header {
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(50%);
+        translate: 0 50%;
 
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0);
+        translate: 0 0;
 
 
     }
@@ -263,7 +305,7 @@ header {
 
     100% {
         top: 100%;
-       
+
         transform: rotate(var(--rotAngle))
     }
 }
@@ -275,10 +317,23 @@ header {
 
     100% {
         transform: translate(-50%, -50px);
-        opacity:0;
+        opacity: 0;
     }
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
 
 /* Media queries */
 @media (min-width:768px) {

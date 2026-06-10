@@ -7,6 +7,7 @@ const currentScore = document.querySelector("#current-score");
 const pointBubble = document.querySelector("#point-bubble");
 const mainPortrait = document.querySelector("#main-portrait");
 const thumbnail = document.querySelector("#thumbnail-portrait");
+const noMoreSkills = document.querySelector("#no-more-skills");
 thumbnail.addEventListener("click", countClicks);
 
 let shot = 0;
@@ -63,7 +64,8 @@ function checkEmpty() {
         let xPosition = rect.left + rect.width / 2;
         let yPosition = skillContainer.getBoundingClientRect().y;
         spawnBubble(xPosition, yPosition, 50);
-
+        skillsParent.style.display = "none";
+        noMoreSkills.style.display = "block";
     }
 }
 
@@ -87,13 +89,13 @@ function spawnBubble(xPos, yPos, points) {
 }
 function countClicks() {
     clicks += 1;
-    console.log(clicks);
     if (clicks >= 20 && !pictureClicks) {
         const rect = thumbnail.getBoundingClientRect();
         let xPosition = rect.left + rect.width / 2;
         let yPosition = thumbnail.getBoundingClientRect().y;
         spawnBubble(xPosition,yPosition,50);
         pictureClicks = true;
+        thumbnail.classList.remove("target");
         document.querySelector("#second-portrait").classList.add("revealed");
     }
 }

@@ -8,6 +8,7 @@ const pointBubble = document.querySelector("#point-bubble");
 const cardTarget = document.querySelector("#card-target");
 cardTarget.addEventListener("click", cardTargetPoints);
 
+
 const thumbnail = document.querySelector("#thumbnail-portrait");
 const noMoreSkills = document.querySelector("#no-more-skills");
 thumbnail.addEventListener("click", countClicks);
@@ -40,7 +41,7 @@ skills.forEach(skill => {
     skill.addEventListener("click", () => {
         //clone the element that was clicked and set the original to be hidden
         let clone = skill.cloneNode(true);
-
+        
         //get the data-skill-name attribute to identify the specific clicked skill
         //then find duplicate skills and set their visibility to hidden to 
         //maintain a consitent animation with no jumps/stutters. 
@@ -88,11 +89,15 @@ function checkEmpty() {
         spawnBubble(xPosition, yPosition, 50);
         skillsParent.style.display = "none";
         noMoreSkills.style.display = "block";
+        showToast("Bonus Points!", "You just deskilled me.");
     }
 }
 
 function countClicks() {
     clicks += 1;
+    if (clicks == 15){
+        showToast("Oh No!","Definately don't click 5 more times!!");
+    }
     if (clicks >= 20 && !pictureClicks) {
         const rect = thumbnail.getBoundingClientRect();
         let xPosition = rect.left + rect.width / 2;

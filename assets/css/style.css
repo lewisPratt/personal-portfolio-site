@@ -68,7 +68,7 @@ nav {
 footer {
     height: 55px;
     width: 100%;
-    background-color: rgb(196, 196, 196);
+    /* background-color: rgb(196, 196, 196); */
     display: flex;
     margin-top: 100px;
 }
@@ -176,10 +176,15 @@ header {
     position: relative;
 }
 
+#project-head {
+    animation: fadeIn 1s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 200%;
+}
+
 #projects h2 {
     color: #c4c4c4;
-    font-size: 3rem;
-    height: 10svh;
+    font-size: 2.3rem;
 }
 
 #projects .card {
@@ -193,6 +198,7 @@ header {
     z-index: 2;
     background-color: white;
     box-shadow: -11px 10px 10px #00000030;
+    transform: skewY(-3deg);
 }
 
 .card-content-row {
@@ -253,7 +259,7 @@ header {
 
 #card-target.folded {
     transform: rotateX(-90deg);
-    z-index:-1;
+    z-index: -1;
     /* folds up */
 
 }
@@ -264,7 +270,7 @@ header {
 
 .margin-cards,
 #first-project {
-    margin-bottom: -400px;
+    margin-bottom: -470px;
 }
 
 
@@ -331,17 +337,11 @@ header {
     cursor: url("../images/reticleHit.png") 16.5 16.5, auto;
 }
 
-@keyframes slideXLeft {
-    0% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.toast-container {
+    position: fixed;
+    right: 0;
+    bottom: 0;
 
-    100% {
-        opacity: 0;
-        transform: translateX(-100%);
-
-    }
 }
 
 @keyframes fadeIn {
@@ -412,6 +412,19 @@ header {
 }
 
 /* Media queries */
+
+@media (min-width:425px) {
+    #project-two {
+        right: 20px;
+
+    }
+
+    #last-project {
+        left: 20px;
+
+    }
+}
+
 @media (min-width:768px) {
     #projects h2 {
         font-size: 4rem;
@@ -438,6 +451,16 @@ header {
         margin-bottom: -350px;
     }
 
+    #project-two {
+        left: 0;
+        right: 0;
+
+    }
+
+    #last-project {
+        left: 0;
+
+    }
 
 }
 
@@ -463,11 +486,7 @@ header {
 
     }
 
-    .card {
-        transform: skewY(-3deg);
-    }
-
-    #projects::after {
+    #first-project::after {
         position: absolute;
         content: '';
         width: 100%;

@@ -22,7 +22,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="assets/javascript/home.js" defer></script>
-
+    <script src="assets/javascript/toast.js" defer></script>
 </head>
 
 <body>
@@ -92,7 +92,7 @@
     </header>
     <main>
         <section id="projects" class="">
-            <!-- <h2 id="project-head" class=" pe-2 pe-md-5 text-end">Projects</h2> -->
+            <h2 id="project-head" class=" pe-2 pe-md-5 text-end">My Favourites</h2>
             <div id="first-project" class=" margin-cards card remove-radius">
                 <div class="project-tab">
                     <span>Frontend</span>
@@ -112,6 +112,7 @@
 
                         <span class="badge text-bg-warning">Ongoing</span>
                         <span class="badge text-bg-light">Course Project</span>
+                        <a href="https://github.com/lewispratt/Project-Athena" class="badge text-bg-info">GitHub</a>
 
 
 
@@ -175,6 +176,27 @@
         <section id="contact">
 
         </section>
+
+<!--Template toast-->
+        <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div class="toast-container bottom-0 end-0 p-3">
+
+                <!-- Then put toasts within -->
+                <div class="toast template-toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+
+                        <strong class="me-auto toast-title">Bootstrap</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        <!-- See? Just like this. -->
+                        You foudn all the targets in 39 seconds. Nice job.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <!--End Template toast-->
     </main>
 </body>
 <footer>

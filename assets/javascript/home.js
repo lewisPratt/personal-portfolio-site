@@ -8,6 +8,14 @@ const pointBubble = document.querySelector("#point-bubble");
 const cardTarget = document.querySelector("#card-target");
 cardTarget.addEventListener("click", cardTargetPoints);
 
+const aboutPanel = document.querySelector("#about-panel");
+const aboutLink = document.querySelector("#about-link").addEventListener("click", () => {
+    
+    aboutPanel.classList.toggle("about-reveal")
+    
+    if(aboutPanel.classList.contains("about-reveal")){ aboutPanel.scrollIntoView(); }
+         
+})
 
 const thumbnail = document.querySelector("#thumbnail-portrait");
 const noMoreSkills = document.querySelector("#no-more-skills");
@@ -41,7 +49,7 @@ skills.forEach(skill => {
     skill.addEventListener("click", () => {
         //clone the element that was clicked and set the original to be hidden
         let clone = skill.cloneNode(true);
-        
+
         //get the data-skill-name attribute to identify the specific clicked skill
         //then find duplicate skills and set their visibility to hidden to 
         //maintain a consitent animation with no jumps/stutters. 
@@ -95,8 +103,8 @@ function checkEmpty() {
 
 function countClicks() {
     clicks += 1;
-    if (clicks == 15){
-        showToast("Oh No!","Definately don't click 5 more times!!");
+    if (clicks == 15) {
+        showToast("Oh No!", "Definately don't click 5 more times!!");
     }
     if (clicks >= 20 && !pictureClicks) {
         const rect = thumbnail.getBoundingClientRect();
@@ -110,15 +118,15 @@ function countClicks() {
 }
 
 function cardTargetPoints() {
-    if(cardTarget.classList.contains("target")){
-    const rect = cardTarget.getBoundingClientRect();
-    let xPosition = rect.left + rect.width / 2;
-    let yPosition = cardTarget.getBoundingClientRect().y;
-    spawnBubble(xPosition, yPosition, 10);
-     cardTarget.classList.add("folded");
-     cardTarget.classList.remove("target");
+    if (cardTarget.classList.contains("target")) {
+        const rect = cardTarget.getBoundingClientRect();
+        let xPosition = rect.left + rect.width / 2;
+        let yPosition = cardTarget.getBoundingClientRect().y;
+        spawnBubble(xPosition, yPosition, 10);
+        cardTarget.classList.add("folded");
+        cardTarget.classList.remove("target");
     }
-    else{
+    else {
         console.log("naughty! Don't spoil the fun..");
     }
 }
@@ -139,10 +147,10 @@ function spawnBubble(xPos, yPos, points) {
 }
 
 function updateScore(points) {
-    if((score + points) >= 300){
+    if ((score + points) >= 300) {
         score = 300;
-    } else{
-    score += points;
-    currentScore.innerText = score;
+    } else {
+        score += points;
+        currentScore.innerText = score;
     }
 }

@@ -8,14 +8,7 @@ const pointBubble = document.querySelector("#point-bubble");
 const cardTarget = document.querySelector("#card-target");
 cardTarget.addEventListener("click", cardTargetPoints);
 
-const aboutPanel = document.querySelector("#about-panel");
-const aboutLink = document.querySelector("#about-link").addEventListener("click", () => {
-    
-    aboutPanel.classList.toggle("about-reveal")
-    
-    if(aboutPanel.classList.contains("about-reveal")){ aboutPanel.scrollIntoView(); }
-         
-})
+
 
 const thumbnail = document.querySelector("#thumbnail-portrait");
 const noMoreSkills = document.querySelector("#no-more-skills");

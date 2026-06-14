@@ -75,8 +75,8 @@ footer {
 
 /* index page-->*/
 #about-panel{
-    width:100%;
-    height:100%;
+    width:50%;
+    height:90%;
     background-color:rgba(255,255,255,0.98);
 
     position: absolute;
@@ -90,6 +90,33 @@ footer {
 }
 #about-panel.about-reveal{
     top:0;
+}
+#overlay{
+    position:fixed;
+    top:-100%;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:99;
+}
+#overlay.overlay-fade-in{
+    animation-name: overlayFadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+#overlay.overlay-fade-out{
+    animation-name: overlayFadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+#overlay.overlay-visible-position{
+    top:0;
+}
+#overlay.overlay-hidden-position{
+    top:-100%;
 }
 #thumbnail-portrait {
     width: 200px;
@@ -429,7 +456,26 @@ header {
         transform: translateY(0px);
     }
 }
+@keyframes overlayFadeIn {
+    0% {
+        opacity: 0;
+    }
 
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes overlayFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        
+        opacity: 0;
+    }
+
+}
 /* Media queries */
 
 @media (min-width:425px) {

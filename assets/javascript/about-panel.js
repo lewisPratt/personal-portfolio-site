@@ -1,7 +1,12 @@
 const overlay = document.querySelector("#overlay");
 const aboutPanel = document.querySelector("#about-panel");
-const aboutLink = document.querySelector("#about-link").addEventListener("click", () => {
 let aboutPanelOpen = false;
+
+document.querySelector("#close-about-panel").addEventListener("click", () => {
+    closeAboutPanel();
+})
+
+const aboutLink = document.querySelector("#about-link").addEventListener("click", () => {
     aboutPanel.classList.toggle("about-reveal");
 
     if (aboutPanel.classList.contains("about-reveal")) {

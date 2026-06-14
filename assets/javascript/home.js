@@ -90,7 +90,7 @@ function checkEmpty() {
         spawnBubble(xPosition, yPosition, 50);
         skillsParent.style.display = "none";
         noMoreSkills.style.display = "block";
-        showToast("Bonus Points!", "You just deskilled me.");
+        showToast("Bonus Points!", "You just deskilled me. Like finding a job isn't hard enough!");
     }
 }
 
@@ -116,7 +116,7 @@ function cardTargetPoints() {
         let xPosition = rect.left + rect.width / 2;
         let yPosition = cardTarget.getBoundingClientRect().y;
         spawnBubble(xPosition, yPosition, 10);
-        cardTarget.classList.add("folded");
+        cardTarget.style.display = "none";
         cardTarget.classList.remove("target");
     }
     else {
